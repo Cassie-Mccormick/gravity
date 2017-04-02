@@ -3,7 +3,7 @@ package dal.gravity;
 /**
  * Represents a pendulum
  */
-public class RegularPendulum extends AbstractEarthPendulum {
+public class RegularPendulum extends AbstractPendulum {
     private double delta, iterations = 0;
     private double dissipation;
     private double lastTheta, lastVel, lastAccel;
@@ -13,8 +13,8 @@ public class RegularPendulum extends AbstractEarthPendulum {
      */
     public RegularPendulum (double inLength, double inMass, double inTheta0, 
 		     double inDelta, double inDiss) {
-	super (inLength, inMass, inTheta0);
-	delta=inDelta;
+	super (inLength, inMass, inTheta0, GRAVITY);
+	delta = inDelta;
 	dissipation = inDiss;
 	lastVel = 0;
 	lastTheta = this.getMaxAngularDisplacement ();
